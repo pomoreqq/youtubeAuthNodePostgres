@@ -8,11 +8,22 @@
 </head>
 <body>
     <h1>login</h1>
+    <ul>
+        <% if (messages.success_message) { %>
+            <li><%= messages.success_message %></li> 
+        <% } %>
+    </ul>
+
+    <ul>
+        <% if (messages.error) { %>
+            <li><%= messages.error %></li>
+         <%} %>
+    </ul>
 
     <form action="/users/login" method="POST">
      
         <div>
-            <input type="email" id="email" name="name" placeholder="email" required>
+            <input type="email" id="email" name="email" placeholder="email" required>
         </div>
         <div>
             <input type="password" id="password" name="password" placeholder="password" required>
